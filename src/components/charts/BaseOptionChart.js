@@ -10,7 +10,13 @@ export function BaseOptionChartStyle() {
   const background = {
     backdropFilter: 'blur(6px)',
     WebkitBackdropFilter: 'blur(6px)', // Fix on Mobile
-    backgroundColor: alpha(theme.palette.background.default, 0.72)
+    backgroundColor: alpha(
+      theme.palette.mode === 'light'
+        ? theme.palette.background.default
+        : theme.palette.background.dark,
+      0.72
+    ),
+    color: theme.palette.mode === 'light' ? theme.palette.common.black : theme.palette.common.white
   };
 
   return (
@@ -25,7 +31,14 @@ export function BaseOptionChartStyle() {
             color: theme.palette.text.primary,
             borderRadius: theme.shape.borderRadiusSm,
             '&:before': { borderBottomColor: 'transparent' },
-            '&:after': { borderBottomColor: alpha(theme.palette.background.default, 0.72) }
+            '&:after': {
+              borderBottomColor: alpha(
+                theme.palette.mode === 'light'
+                  ? theme.palette.background.default
+                  : theme.palette.background.dark,
+                0.72
+              )
+            }
           },
           '.apexcharts-tooltip.apexcharts-theme-light': {
             ...background,
@@ -150,7 +163,7 @@ export default function BaseOptionChart() {
     // Markers
     markers: {
       size: 0,
-      strokeColors: theme.palette.background.paper
+      strokeColors: theme.palette.background.default
     },
 
     // Tooltip

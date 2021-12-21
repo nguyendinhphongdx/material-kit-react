@@ -36,12 +36,14 @@
     ]
   },
   "dependencies": {
+    "@asseinfo/react-kanban": "^2.2.0",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@iconify/icons-ant-design": "^1.1.0",
     "@iconify/icons-eva": "^1.1.0",
     "@iconify/icons-ic": "^1.1.10",
     "@iconify/react": "^3.0.1",
+    "@mui/icons-material": "^5.2.0",
     "@mui/lab": "^5.0.0-alpha.47",
     "@mui/material": "^5.0.0",
     "@mui/utils": "^5.0.0",

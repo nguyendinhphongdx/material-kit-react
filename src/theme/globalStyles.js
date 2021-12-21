@@ -68,7 +68,19 @@ export default function GlobalStyles() {
         '.blur-up.lazyloaded ': {
           WebkitFilter: 'blur(0)',
           filter: 'blur(0)'
-        }
+        },
+        '.MuiCard-root.css-1qhe437-MuiPaper-root-MuiCard-root': {
+          backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 100 : 800],
+          boxShadow: 'rgb(0 0 0 / 24%) 0px 0px 2px 0px, rgb(0 0 0 / 24%) 0px 16px 32px -4px'
+        },
+        '.MuiCard-root.css-1nilsx3-MuiPaper-root-MuiCard-root': {
+          backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 100 : 800],
+          boxShadow: 'rgb(0 0 0 / 24%) 0px 0px 2px 0px, rgb(0 0 0 / 24%) 0px 16px 32px -4px'
+        },
+        '.css-8ebtji-MuiTypography-root': {
+          color: theme.palette.common[theme.palette.mode === 'light' ? 'black' : 'white']
+        },
+        '.MuiTypography-root.MuiTypography-body2.css-1gjbiqi-MuiTypography-root': {}
       }}
     />
   );

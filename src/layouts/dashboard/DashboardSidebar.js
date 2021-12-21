@@ -1,17 +1,17 @@
+import { Avatar, Box, Button, Drawer, Link, Stack, Typography, useTheme } from '@mui/material';
+// material
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-// material
-import { styled } from '@mui/material/styles';
-import { Box, Link, Button, Drawer, Typography, Avatar, Stack } from '@mui/material';
+import { MHidden } from '../../components/@material-extend';
 // components
 import Logo from '../../components/Logo';
-import Scrollbar from '../../components/Scrollbar';
 import NavSection from '../../components/NavSection';
-import { MHidden } from '../../components/@material-extend';
+import Scrollbar from '../../components/Scrollbar';
+import account from '../../_mocks_/account';
 //
 import sidebarConfig from './SidebarConfig';
-import account from '../../_mocks_/account';
 
 // ----------------------------------------------------------------------
 
@@ -41,6 +41,7 @@ DashboardSidebar.propTypes = {
 
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   const { pathname } = useLocation();
+  const theme = useTheme();
 
   useEffect(() => {
     if (isOpenSidebar) {
@@ -53,7 +54,13 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
     <Scrollbar
       sx={{
         height: '100%',
-        '& .simplebar-content': { height: '100%', display: 'flex', flexDirection: 'column' }
+        backgroundColor:
+          theme.palette.background[theme.palette.mode === 'light' ? 'default' : 'dark'],
+        '& .simplebar-content': {
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column'
+        }
       }}
     >
       <Box sx={{ px: 2.5, py: 3 }}>
@@ -123,33 +130,36 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   );
 
   return (
-    <RootStyle>
-      <MHidden width="lgUp">
-        <Drawer
-          open={isOpenSidebar}
-          onClose={onCloseSidebar}
-          PaperProps={{
-            sx: { width: DRAWER_WIDTH }
-          }}
-        >
-          {renderContent}
-        </Drawer>
-      </MHidden>
+    <div>
+      <RootStyle>
+        <MHidden width="lgUp">
+          <Drawer
+            open={isOpenSidebar}
+            onClose={onCloseSidebar}
+            PaperProps={{
+              sx: { width: DRAWER_WIDTH }
+            }}
+            id="abc"
+          >
+            {renderContent}
+          </Drawer>
+        </MHidden>
 
-      <MHidden width="lgDown">
-        <Drawer
-          open
-          variant="persistent"
-          PaperProps={{
-            sx: {
-              width: DRAWER_WIDTH,
-              bgcolor: 'background.default'
-            }
-          }}
-        >
-          {renderContent}
-        </Drawer>
-      </MHidden>
-    </RootStyle>
+        <MHidden width="lgDown">
+          <Drawer
+            open
+            variant="persistent"
+            PaperProps={{
+              sx: {
+                width: DRAWER_WIDTH,
+                bgcolor: 'background.default'
+              }
+            }}
+          >
+            {renderContent}
+          </Drawer>
+        </MHidden>
+      </RootStyle>
+    </div>
   );
 }

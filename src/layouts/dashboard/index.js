@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
+import { useTheme } from '@emotion/react';
+
 //
 import DashboardNavbar from './DashboardNavbar';
 import DashboardSidebar from './DashboardSidebar';
+import SettingWiget from '../../components/_dashboard/common/SettingWiget';
 
 // ----------------------------------------------------------------------
 
@@ -34,11 +37,18 @@ const MainStyle = styled('div')(({ theme }) => ({
 
 export default function DashboardLayout() {
   const [open, setOpen] = useState(false);
+  const theme = useTheme();
 
   return (
-    <RootStyle>
+    <RootStyle
+      style={{
+        backgroundColor:
+          theme.palette.background[theme.palette.mode === 'light' ? 'default' : 'dark']
+      }}
+    >
       <DashboardNavbar onOpenSidebar={() => setOpen(true)} />
       <DashboardSidebar isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
+      <SettingWiget />
       <MainStyle>
         <Outlet />
       </MainStyle>
