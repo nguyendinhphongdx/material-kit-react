@@ -45,7 +45,7 @@ function KanBan() {
           </Button>
         </Stack>
         <Board
-          // renderCard={(card) => <KanbanCard card={card} />}
+          renderCard={(card) => <KanbanCard card={card} />}
           initialBoard={list || { column: [] }}
           allowRemoveLane
           allowRenameColumn
