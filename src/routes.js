@@ -10,7 +10,7 @@ import Products from './pages/Products';
 import Blog from './pages/Blog';
 import User from './pages/User';
 import NotFound from './pages/Page404';
-import KanBan from './pages/KanBan';
+import KanBan from './pages/Kanban/KanBan';
 
 // ----------------------------------------------------------------------
 

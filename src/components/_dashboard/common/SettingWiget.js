@@ -55,7 +55,7 @@ function ButtonMode(props) {
 }
 ButtonMode.propTypes = {
   title: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.string || PropTypes.any,
   onClick: PropTypes.func
 };
 ButtonColor.propTypes = {

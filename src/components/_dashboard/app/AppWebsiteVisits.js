@@ -1,7 +1,7 @@
+// material
+import { Box, Card, CardHeader } from '@mui/material';
 import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
-// material
-import { Card, CardHeader, Box, useTheme } from '@mui/material';
 //
 import { BaseOptionChart } from '../../charts';
 
@@ -26,7 +26,7 @@ const CHART_DATA = [
 ];
 
 export default function AppWebsiteVisits() {
-  const theme = useTheme();
+  // const theme = useTheme();
   const chartOptions = merge(BaseOptionChart(), {
     stroke: { width: [0, 2, 3] },
     plotOptions: { bar: { columnWidth: '11%', borderRadius: 4 } },
