@@ -38,19 +38,41 @@ const sidebarConfig = [
     icon: getIcon(iconKanbanFill)
   },
   {
-    title: 'login',
-    path: '/login',
-    icon: getIcon(lockFill)
+    title: 'Auth',
+    icon: getIcon(lockFill),
+    children: [
+      {
+        title: 'login',
+        path: '/login',
+        icon: getIcon(lockFill)
+      },
+      {
+        title: 'register',
+        path: '/register',
+        icon: getIcon(personAddFill)
+      }
+    ]
   },
-  {
-    title: 'register',
-    path: '/register',
-    icon: getIcon(personAddFill)
-  },
+
   {
     title: 'Not found',
     path: '/404',
     icon: getIcon(alertTriangleFill)
+  },
+  {
+    title: 'embedded',
+    path: '/embedded',
+    icon: getIcon(personAddFill),
+    children: [
+      {
+        title: 'Google Map',
+        path: '/maps'
+      },
+      {
+        title: 'Global',
+        path: '/global'
+      }
+    ]
   }
 ];
 
